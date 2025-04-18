@@ -26,6 +26,7 @@ public class TConJEIPlugin implements IModPlugin {
     private static final RecipeType<MaterialStatsWrapper> HARVEST_STATS = RecipeType.create(MOD_ID, "harvest_stats", MaterialStatsWrapper.class);
     private static final RecipeType<MaterialStatsWrapper> RANGED_STATS = RecipeType.create(MOD_ID, "ranged_stats", MaterialStatsWrapper.class);
     private static final RecipeType<MaterialStatsWrapper> ARMOR_STATS = RecipeType.create(MOD_ID, "armor_stats", MaterialStatsWrapper.class);
+    private static final RecipeType<MaterialStatsWrapper> CURIO_STATS = RecipeType.create(MOD_ID, "curio_stats", MaterialStatsWrapper.class);
 
     @NotNull
     @Override
@@ -45,6 +46,9 @@ public class TConJEIPlugin implements IModPlugin {
         registration.addRecipes(ARMOR_STATS, statsWrappers.stream()
                 .filter(w -> w.hasStats(TConJEI.ARMOR_STAT_IDS))
                 .toList());
+        registration.addRecipes(CURIO_STATS, statsWrappers.stream()
+                .filter(w -> w.hasStats(TConJEI.CURIO_STAT_IDS))
+                .toList());
     }
 
     @Override
@@ -53,13 +57,14 @@ public class TConJEIPlugin implements IModPlugin {
         registration.addRecipeCategories(new HarvestStatsCategory(guiHelper));
         registration.addRecipeCategories(new RangedStatsCategory(guiHelper));
         registration.addRecipeCategories(new ArmorStatsCategory(guiHelper));
+        registration.addRecipeCategories(new CurioStatsCategory(guiHelper));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(TinkerTables.tinkerStation.asItem()), HARVEST_STATS, RANGED_STATS, ARMOR_STATS);
-        registration.addRecipeCatalyst(new ItemStack(TinkerTables.tinkersAnvil.asItem()), HARVEST_STATS, RANGED_STATS, ARMOR_STATS);
-        registration.addRecipeCatalyst(new ItemStack(TinkerTables.scorchedAnvil.asItem()), HARVEST_STATS, RANGED_STATS, ARMOR_STATS);
+        registration.addRecipeCatalyst(new ItemStack(TinkerTables.tinkerStation.asItem()), HARVEST_STATS, RANGED_STATS, ARMOR_STATS, CURIO_STATS);
+        registration.addRecipeCatalyst(new ItemStack(TinkerTables.tinkersAnvil.asItem()), HARVEST_STATS, RANGED_STATS, ARMOR_STATS, CURIO_STATS);
+        registration.addRecipeCatalyst(new ItemStack(TinkerTables.scorchedAnvil.asItem()), HARVEST_STATS, RANGED_STATS, ARMOR_STATS, CURIO_STATS);
     }
 
 }
