@@ -37,6 +37,11 @@ public class TConJEI {
             StatlessMaterialStats.MAILLE.getIdentifier(),
             StatlessMaterialStats.SHIELD_CORE.getIdentifier()
     );
+    public static final List<MaterialStatsId> CURIO_STAT_IDS = List.of(
+            CharmChainMaterialStats.ID,
+            STExtraMaterialStats.CHARM_CORE.getType().getId()
+    );
+    
     public static HashMap<Item, Component> allMaterialsTooltip = new HashMap<>();
 
     public TConJEI() {
