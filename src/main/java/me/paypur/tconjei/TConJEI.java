@@ -1,5 +1,7 @@
 package me.paypur.tconjei;
 
+import com.ssakura49.sakuratinker.content.tools.stats.CharmChainMaterialStats;
+import com.ssakura49.sakuratinker.content.tools.stats.STExtraMaterialStats;
 import me.paypur.tconjei.client.ClientConfig;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
