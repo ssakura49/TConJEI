@@ -41,7 +41,7 @@ public class TConJEI {
     );
     public static final List<MaterialStatsId> CURIO_STAT_IDS = List.of(
             CharmChainMaterialStats.ID,
-            STExtraMaterialStats.CHARM_CORE.getType().getId()
+            STExtraMaterialStats.CHARM_CORE.getIdentifier()
     );
     
     public static HashMap<Item, Component> allMaterialsTooltip = new HashMap<>();
