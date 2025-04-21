@@ -58,7 +58,7 @@ public class CurioStatsCategory extends AbstractMaterialStatsCategory {
         if (charmChainOptional.isPresent()) {
             CharmChainMaterialStats stats = charmChainOptional.get();
             drawComponent(gui, stats.getLocalizedName().withStyle(ChatFormatting.UNDERLINE), 0, lineNumber++, color, true);
-            for (int i = 0; i < 5; i++) { // 5个统计属性
+            for (int i = 0; i < 6; i++) { // 5个统计属性
                 if (i < stats.getLocalizedInfo().size()) {
                     drawStatComponent(gui, stats.getLocalizedInfo().get(i), lineNumber++);
                 }
@@ -110,7 +110,8 @@ public class CurioStatsCategory extends AbstractMaterialStatsCategory {
                             getStatTooltip(chain, 1, mouseX, mouseY, lineNumber++),
                             getStatTooltip(chain, 2, mouseX, mouseY, lineNumber++),
                             getStatTooltip(chain, 3, mouseX, mouseY, lineNumber++),
-                            getStatTooltip(chain, 4, mouseX, mouseY, lineNumber++))
+                            getStatTooltip(chain, 4, mouseX, mouseY, lineNumber++),
+                            getStatTooltip(chain, 5, mouseX, mouseY, lineNumber++))
                     .filter(list -> !list.isEmpty())
                     .findFirst();
             if (component.isPresent()) {
